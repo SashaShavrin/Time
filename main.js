@@ -1,4 +1,3 @@
-
 // Создадим элементы 
 let parent = document.getElementById('timer');
 let divHours = document.createElement('div');
@@ -57,10 +56,8 @@ setInterval(endTime, 1000)
 
 function roundTime() {
   let round = document.getElementById('round');
-  let hours = new Date().getHours();
-  let minuts = new Date().getMinutes();
   let sec = new Date().getSeconds();
-  let persent = (hours * 4.36) + (minuts / 60 * 4.36);
+  let persent = sec *100/60;
   let gradient = persent + '%';
   round.style.background = ('linear-gradient(0deg, rgb(82, 0, 11)' + gradient + ', rgb(  255 255 255 / 26%) 0%, rgba(255, 255, 255, 0) 99.79%');
 }
