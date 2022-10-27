@@ -58,7 +58,7 @@ function roundTime() {
   let round = document.getElementById('round');
   let sec = new Date().getSeconds();
   let miSecconds = new Date().getMilliseconds();
-  let persent = (sec * 100/60) + miSecconds/1000;
+  let persent = (sec + miSecconds/1000)*1.6666667;
   let gradient = persent + '%';
   round.style.background = ('linear-gradient(0deg, rgb(82, 0, 11)' + gradient + ', rgb(  255 255 255 / 26%) 0%, rgba(255, 255, 255, 0) 99.79%');
   if (Math.ceil(persent) % 2 == 0) {
