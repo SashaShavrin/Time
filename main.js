@@ -61,6 +61,19 @@ function roundTime() {
   let persent = (sec * 100/60) + miSecconds/1000;
   let gradient = persent + '%';
   round.style.background = ('linear-gradient(0deg, rgb(82, 0, 11)' + gradient + ', rgb(  255 255 255 / 26%) 0%, rgba(255, 255, 255, 0) 99.79%');
+  persent = Math.round(persent);
+  if (persent == 100) {
+    round.style.boxShadow = ('rgb(50 50 93) 0px 50px 250px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset')
+  }
+  if (persent == 1) {
+    round.style.boxShadow = ('rgb(50 50 93) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset')
+  }
+  if (persent % 2 === 0) {
+    round.style.boxShadow = ('rgb(50 50 93) 0px 50px 120px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset')
+  } 
+  if (persent % 2 !== 0) {
+    round.style.boxShadow = ('rgb(50 50 93) 0px 50px 100px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset')
+  } 
 }
 roundTime();
 setInterval(roundTime, 1000)
