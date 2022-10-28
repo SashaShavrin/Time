@@ -87,6 +87,9 @@ function stopInterval() {
     clearInterval(timerRound);
     clearInterval(timerEnd);
     let clock = document.getElementById('timer');
-    clock.style.opacity = '0.5';
+    clock.style.opacity = '0.9';
+    clock.style.color = ' rgba(120, 120, 199)';
+    round.style.background= ('linear-gradient(0deg, rgb(0 0 0 / 0%) 92.1365%, rgb(0 0 0 / 6%) 0%, rgba(255, 255, 255, 0) 99.79%)')
+    round.style.boxShadow = ('rgb(50 50 93) 0px 50px 400px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset')
   } 
 }
