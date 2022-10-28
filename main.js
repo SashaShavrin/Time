@@ -66,7 +66,7 @@ function roundTime() {
   let miSecconds = new Date().getMilliseconds();
   let persent = (sec + miSecconds/1000)*1.666;
   let gradient = persent + '%';
-  round.style.background = ('linear-gradient(0deg, rgb(129, 101, 135) 63%' + gradient + ', rgb(  255 255 255 / 26%) 0%, rgba(255, 255, 255, 0) 99.79%');
+  round.style.background = ('linear-gradient(0deg, rgb(129, 101, 135)' + gradient + ', rgb(  255 255 255 / 26%) 0%, rgba(255, 255, 255, 0) 99.79%');
   if (Math.ceil(persent) % 2 == 0) {
     round.style.boxShadow = ('rgb(50 50 93) 0px 50px 150px -20px, rgb(0 0 0 / 30%) 0px 30px 60px -30px, rgb(10 37 64 / 35%) 0px -2px 6px 0px inset')
   } else {
