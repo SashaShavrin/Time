@@ -1,3 +1,9 @@
+// Создадим таймеры 
+let timer = null;
+let timerRound = null;
+let timerEnd = null;
+
+function timers() {
 // Создадим элементы 
 let parent = document.getElementById('timer');
 let divHours = document.createElement('div');
@@ -32,7 +38,7 @@ function setTime() {
 // Предварительно вызовем функцию перед таймером для мгновенного отображения на странице
 setTime();
 // вызываем функцию endTime каждую секунду
-setInterval(setTime, 1000)
+timer = setInterval(setTime, 1000)
 // Зададим внешние переменные
 let newParent = document.getElementById('end')
 let newTimer = document.createElement('div');
@@ -52,13 +58,13 @@ function endTime() {
 // Предварительно вызовем функцию перед таймером для мгновенного отображения на странице
 endTime();
 // вызываем функцию endTime каждую секунду
-setInterval(endTime, 1000)
+timerEnd = setInterval(endTime, 1000)
 
 function roundTime() {
   let round = document.getElementById('round');
   let sec = new Date().getSeconds();
   let miSecconds = new Date().getMilliseconds();
-  let persent = (sec + miSecconds/1000)*1.6666667;
+  let persent = (sec + miSecconds/1000)*1.666;
   let gradient = persent + '%';
   round.style.background = ('linear-gradient(0deg, rgb(82, 0, 11)' + gradient + ', rgb(  255 255 255 / 26%) 0%, rgba(255, 255, 255, 0) 99.79%');
   if (Math.ceil(persent) % 2 == 0) {
@@ -68,12 +74,19 @@ function roundTime() {
   } 
 }
 roundTime();
-setInterval(roundTime, 100)
+timerRound = setInterval(roundTime, 100)
+}
 
-// Остановим время и выведем alert
+timers()
+
 function stopInterval() {
-  let btn = document.getElementById('stopBtn')
-  if (btn.click) {
-    return alert('Teme to stop');
-  }
+  let btn = document.getElementById('stopBtn');
+  btn.innerHTML = 'YOU WIN'
+  if(btn.click){
+    clearInterval(timer);
+    clearInterval(timerRound);
+    clearInterval(timerEnd);
+    let clock = document.getElementById('timer');
+    clock.style.opacity = '0.5';
+  } 
 }
